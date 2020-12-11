@@ -3,6 +3,7 @@ title: "**Tutoriel ggplot2**"
 author: "Tarik HAKAM"
 date: "10/12/2020"
 output: pdf_document
+bibliography : bibliography_ggplot2.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-La librairie **ggplot2** est  une librarie R du package *tidyverse*, développée selon les principes développés par Leland Wilkinson dans son ouvrage *The Grammar of Graphics*.
+La librairie **ggplot2** est  une librarie R du package *tidyverse*, développée selon les principes développés par Leland Wilkinson dans son ouvrage *The Grammar of Graphics*. [@CRAN]
 
 C'est une librairie de visualisation de données développée par Hadley Wickham.
 
@@ -21,7 +22,7 @@ C'est une librairie de visualisation de données développée par Hadley Wickham
 
 Pour commencer, nous allons charger le dataset "iris".
 
-C'est à partir de ces données que nous réaliserons nos tests et que nous créerons les différents types de plots. 
+C'est à partir de ces données que nous réaliserons nos tests et que nous créerons les différents types de plots. [@ggplot2]
 
 ```{r iris}
 data("iris")
@@ -204,3 +205,6 @@ b + geom_bar(aes(fill = Species)) +
   xlab("Espèces") +  ylab("Nombre d'individus") +
   ggtitle("Fig 8. Nombre d'individus en fonction des espèces")
 ```
+
+# **Bibliographie**
+
