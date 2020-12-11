@@ -3,6 +3,7 @@ title: "**Tutoriel pracma**"
 author: "Tarik HAKAM"
 date: "10/12/2020"
 output: pdf_document
+bibliography : bibliography_pracma.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ## Cas d'usage du package pracma : Quadrature Hermite-Gauss
-La quadrature Hermite-Gauss, également appelée quadrature Hermite, est une quadrature gaussienne sur l'intervalle $(-\infty, \infty)$ avec fonction de pondération $w$ telle que :
+La quadrature Hermite-Gauss, également appelée quadrature Hermite, est une quadrature gaussienne sur l'intervalle $(-\infty, \infty)$ avec fonction de pondération $w$ telle que [@Hermite]:
 
 \begin{equation}
     w(x) = \exp(-x^2)
@@ -26,10 +27,10 @@ La quadrature Hermite est utilisée pour intégrer des fonctions de la forme :
 
 $x$ et $w$ sont obtenus à partir des valeurs propres tridiagonales.
 
-La valeur d'une telle intégrale est alors sum($w$$\times$$f(x)$).
+La valeur d'une telle intégrale est alors sum($w$$\times$$f(x)$). [@CRAN]
 
 ### R Code
-Pour coder la quadrature Hermite-Gauss, le package pracma a une fonction prédéfinie : **gaussHermite(n)**
+Pour coder la quadrature Hermite-Gauss, le package pracma a une fonction prédéfinie : **gaussHermite(n)** 
 
 Dans notre exemple, nous prenons $n = 17$ comme ordre de quadrature.
 
@@ -124,7 +125,7 @@ ainsi, on obtient :
 
 ## Cas d'usage du package pracma : Approximation de Tchebytchev
 
-Cette méthode traite des polynômes uniquement défini sur l'intervalle [-1;1] tandis que la fonction à étudier est sur l'intervalle [a;b] avec $a,b$ $\in$ $\mathbf{R}$.
+Cette méthode traite des polynômes uniquement défini sur l'intervalle [-1;1] tandis que la fonction à étudier est sur l'intervalle [a;b] avec $a,b$ $\in$ $\mathbf{R}$. [@Tchebychev]
 
 Toute variable $x$ de ce dernier correspondra une variable $v$ comprise entre $-1$ et $1$, par transformation affine suivante :
 
@@ -206,3 +207,6 @@ lines(x, yp, col = "navy")
 lines(x, yc, col = "red")
 grid()
 ```
+
+# **Bibliographie**
+
