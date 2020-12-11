@@ -3,6 +3,7 @@ title: "**Tutoriel caret**"
 author: "Tarik HAKAM"
 date: "10/12/2020"
 output: pdf_document
+bibliography : bibliography_caret.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -43,7 +44,7 @@ Il faut mettre en place le set seed pour s'assurer de la reproductibilité.
 set.seed(999)
 ``` 
 
-Le résultat produit consiste en un ensemble de règles utilisées pour prédire la variable de résultat, qui peut être soit :
+Le résultat produit consiste en un ensemble de règles utilisées pour prédire la variable de résultat, qui peut être soit [@Model]:
 
 - une variable continue, pour les arbres de régression
 
@@ -67,7 +68,7 @@ decision_tree <- train(Species ~., data = train, method = "rpart",
 ```
 
 
-La matrice de confusion est l'une des nombreuses façons d'analyser la précision d'un modèle de classification. 
+La matrice de confusion est l'une des nombreuses façons d'analyser la précision d'un modèle de classification. [@confusion_matrix]
 
 Comme le montre le tableau ci-dessous, une matrice de confusion est essentiellement un tableau bidimensionnel à deux axes. 
 
@@ -165,3 +166,5 @@ decision_tree <- train(Species ~., data = train, method = "rpart",
 #Summarize the results
 decision_tree
 ```
+# **Bibliographie**
+
