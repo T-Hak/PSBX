@@ -3,6 +3,7 @@ title: "**Tutoriel dplyr**"
 author: "Tarik HAKAM"
 date: "10/12/2020"
 output: pdf_document
+bibliography : bibliography_dplyr.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-Le package **dplyr** fait parti du package *tidyverse*.
+Le package **dplyr** fait parti du package *tidyverse*. [@dplyr]
 
 Il s'agit d'une extension facilitant le traitement et la manipulation de données contenues dans une ou plusieurs tables, qu’il s’agisse de data frame ou de tibble (tableaux de données). 
 
@@ -173,4 +174,6 @@ iris %>%
   summarise(Median.Petal.Length = median(Petal.Length)) %>%
 arrange(Median.Petal.Length)
 ```
+
+# **Bibliographie**
 
