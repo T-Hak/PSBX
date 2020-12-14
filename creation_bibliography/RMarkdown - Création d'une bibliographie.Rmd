@@ -1,0 +1,215 @@
+---
+title: "**Tutoriel - Création d'une bibliographie en R Markdown**"
+author: "Tarik HAKAM"
+date: "14/12/2020"
+output: pdf_document
+bibliography : RMarkdown_bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Création d'un fichier recensant les références bibliographiques
+
+## Spécification d'une bibliographie
+
+Pour générer une bibliographie, vous devrez spécifier un fichier bibliographique en utilisant le champ de métadonnées **`bibliography`** dans une section de métadonnées YAML. 
+
+ \ 
+ 
+***Par exemple :***
+
+title: "Titre du document"
+
+author: "Nom de l'auteur"
+
+date: "01/01/2020"
+
+output: pdf_document
+
+bibliography : nom_du_fichier.bib
+
+ \ 
+
+Votre fichier bibliographique peut avoir différentes extensions, telles que :
+
+| Format | File extension |
+| ------------- | ---------: |
+| CSL-JSON      | .json      |
+| MODS	        | .mods      |
+| BibLaTeX      | .bib       |
+| BibTeX        | .bibtex    |
+| RIS           | .ris       |
+| EndNote       | .enl       |
+| EndNote XML   | .xml       |
+| ISI           | .wos       |
+| MEDLINE       | .medline   |
+| Copac       	| .copac     |
+
+
+L'extension **CSL-JSON** est généralement le format recommandé. 
+
+Il s'agit du format natif du processeur de citations de Pandoc, pandoc-citeproc. 
+
+Toutes les autres extensions sont converties en interne au format CSL-JSON.
+
+Cependant, il est à noter que, généralement, l'extension **.bib** peut être utilisée avec les fichiers BibTeX et BibLaTeX, mais vous pouvez utiliser le format **.bibtex** pour forcer BibTeX.
+
+
+## Emplacement de la bibliographie
+
+Les bibliographies sont placées à la fin du document.
+
+Vous pouvez donc terminer celui-ci avec un en-tête approprié, tel que :
+
+```
+Dernier paragraphe.
+
+Bibilographie
+```
+
+La bibliographie sera insérée après cet en-tête.
+
+ \ 
+ 
+## Création du fichier bibliographique
+
+Votre fichier bibliographique, comme vu précédemment pourra avoir une des différentes extensions susmentionnées.
+
+A l'aide d'un éditeur de code *("Sublime Text" par exemple)*, il vous faut créer un nouveau fichier en lui attribuant un nom ainsi qu'une des extensions précitées.
+
+***Exemple :*** nom_du_fichier.bib
+
+ \ 
+
+Une fois ce nouveau fichier créé, vous devez le compléter comme suit : (en y mentionnant les bonnes références) (cf. l'exemple joint **nom_du_fichier.bib**). 
+
+
+### **Pour les manuels :**
+
+**`@Manual`**{R-base (désignation arbitraire),
+
+       title = {R: A Language and Environment for Statistical
+           Computing},
+           
+       author = {{R Core Team}},
+  
+       organization = {R Foundation for Statistical Computing},
+  
+       address = {Vienna, Austria},
+  
+       year = {2019},
+  
+       url = {https://www.R-project.org},
+  
+}
+
+ \ 
+
+### **Pour les livres :**
+
+**`@book`**{sverdrup-thygeson_insectes_2019 (désignation arbitraire),
+
+       address = {Paris},
+    
+       title = {Insectes, un monde secret: sans eux nous ne pourrions pas vivre},
+    
+       isbn = {978-2-08-145226-8},
+  
+       language = {French},
+    
+       publisher = {Arthaud},
+    
+       author = {Sverdrup-Thygeson, Anne and Hervieu, Hélène and Ythier, Marc},
+
+       year = {2019}
+    
+}
+
+### **Pour les articles :**
+
+**`@article`**{debarsy_testing_2010 (désignation arbitraire),
+
+       title = {Testing for spatial autocorrelation in a fixed effects panel data model},
+    
+       volume = {40},
+    
+       issn = {0166-0462},
+    
+       url = {http://www.sciencedirect.com/science/article/pii/S0166046210000451},
+    
+       doi = {10.1016/j.regsciurbeco.2010.06.001},
+    
+       abstract = {The aim of this paper is to assess the relevance of spatial autocorrelation in a fixed effects panel data model and in the affirmative, to identify the most appropriate spatial specification as this appears to be a crucial point from the modeling perspective of interactive heterogeneity. Several {LM} test statistics as well as their {LR} counterparts, which allow discriminating between endogenous spatial lag versus spatially autocorrelated errors, are therefore proposed. Monte Carlo experiments show their good finite sample performance. Finally, an empirical application is provided in the framework of the well-known Feldstein–Horioka puzzle.},
+    
+       pages = {453--470},
+    
+       number = {6},
+    
+       journaltitle = {Regional Science and Urban Economics},
+    
+       shortjournal = {Regional Science and Urban Economics},
+    
+       author = {Debarsy, Nicolas and Ertur, Cem},
+    
+       urldate = {2015-10-01},
+    
+       date = {2010-11},
+    
+       keywords = {Panel data, Spatial autocorrelation, Test statistics},
+    
+       file = {complex_zotero_path}
+       
+}
+
+### **Pour les références web :**
+
+**`@online`**{CRAN (désignation arbitraire),
+
+       author = {G Grothendieck (SymPy itself is by Ondrej Certik and others),
+
+       Contributors: Carlos J. Gil Bellosta},
+
+       title = {Package ‘rSymPy’},
+    
+       year = {February, 2019},
+
+       url = {https://cran.r-project.org/web/packages/rSymPy/rSymPy.pdf}
+
+}
+
+ \ 
+ 
+## **Citations bibliographiques**
+
+### **Syntaxe de citation**
+
+Par convention, les citations sont placées entre crochets et séparées par des points-virgules. 
+
+En R Markdown, chaque citation doit avoir une clé, composée de **"@"** + l'identifiant de la citation choisie arbitrairement, le plus court possible de préférence, dans la base de données créée dans le fichier ***nom_du_fichier.bib*** [@Cookbook].
+
+ \ 
+
+***Voici quelques exemples :***
+
+- `Fin du premier paragraphe [@R-base]`.
+
+- `Fin du second paragraphe [@sverdrup-thygeson_insectes_2019]`.
+
+- `Fin du troisième paragraphe [@debarsy_testing_2010; @CRAN]`.
+
+
+Un signe moins **(-)** avant le **"@"** supprimera la mention de l'auteur dans la citation.
+
+Cela peut être utile lorsque l'auteur est déjà mentionné dans le texte. 
+
+ \ 
+
+***Exemple : ***
+
+Jules Verne a écrit Vingt Mille Lieues sous les mers `[-@jules_verne]`.
+
+
+# Bibliographie
+
