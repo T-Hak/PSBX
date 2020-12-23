@@ -1,0 +1,169 @@
+---
+title: "**rsympy de Jingwen SU**"
+author: "Tarik HAKAM"
+date: "22/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Critères d'évaluation 
+
+1.	Comportement du Rmd à l'exécution
+2.	Qualité de la rédaction du dossier
+3.	Accessibilité, didactisme et pertinence du dossier
+4.	Qualité et lisibilité du Rmarkdown
+5.	Qualité du LaTeX / équation et des illustrations
+
+
+## 2. Lien vers le document commenté
+
+En cliquant [**ici**](https://github.com/Jingwen-su/PSBX/tree/main/Document%20final), vous trouverez le lien menant au GitHub de Jingwen SU hébergeant le fruit de sa réalisation.
+
+## 3. Auteurs du document commenté
+
+Le document évalué dans le cadre de ce rendu a été produit par Jingwen SU, étudiante en Master 2 Data Management à Paris School of Business.
+
+## 4. Synthèse du document
+
+Dans ce document, il est proposé une illustration du package **rSymPy** à travers des applications mathématiques visant à calculer des opérations symboliques dans R.
+
+Le package **rSymPy** permet d'accéder au système d'algèbre informatique SymPy depuis R via Jython. rSymPy requiert donc le chargement du package ***rJython***.
+
+SymPy est une bibliothèque Python pour le calcul symbolique. Il est entièrement écrit en Python et ne dépend pas de bibliothèques externes. Son objectif est de devenir un système d'algèbre informatique complet.
+
+Pour la démonstration et suite à l'installation du package et au chargement des librairies sus-mentionnées, l'auteure procède par étape, à savoir : 
+
+1. définir 7 variables : Q, n, m, g, k, Sf et y
+2. définir une équation
+3. simplifier par résolution l’équation
+4. affecter chaque variable à une valeur
+5. définir la valeur de sortie 
+
+
+## 5. Extrait commenté des parties de code
+
+L'auteure commence par définir 7 variables : Q, n, m, g, k, Sf et y. 
+
+```{r eval=FALSE, include=TRUE}
+Q <- Var("Q")
+n <- Var("n")
+m <- Var("m")
+g <- Var("g")
+k <- Var("k")
+Sf <- Var("Sf")
+y <- Var("y")
+```
+
+Puis, elle définit l’equation suivante, telle que :
+
+\begin{equation}
+expr = n \times Q \times (2 \times y \times \sqrt{1+m^2}^{\frac{2}{3}} - k \times (m \times y^2)^{\frac{5}{3}} \times \sqrt{Sf} 
+\end{equation}
+
+```{r eval=FALSE, include=TRUE}
+sympy("expr = n*Q*(2*y*sqrt(1+m**2))**(2/3) - k*(m*y**2)**(5/3)*sqrt(Sf)")
+```
+
+La sortie de ce chunk affiche la simplification par résolution de l’équation.
+
+Ensuite, il est affecté à chaque variable, une valeur, telle que : 
+
+- Q = 1.2
+- n = 0.045
+- m = 3.4
+- Sf = 0.2
+- g = 9.806
+- k = 1
+
+```{r eval=FALSE, include=TRUE}
+sympy("solve(expr.subs([(Q, 1.2), (n, 0.045), (m, 3.4), (Sf, 0.2), (g, 9.806), (k, 1)]), y)")
+```
+
+La sortie de ce chunk affiche les solutions de l’équation, à savoir : 
+
+- [-0.188451640531767, 0.188451640531767]
+
+
+Et enfin, l'auteure définit la valeur de sortie. Elle affecte les solutions de l’équation à la variable « out » et les convertit sous forme de liste  dans la variable « out ». Ainsi, cela affiche en sortie la longueur de cette liste, soit 2 solutions : 
+
+- $-0.1884516$
+- $0.1884516$
+
+```{r eval=FALSE, include=TRUE}
+out <- sympy("solve(expr.subs([(Q, 1.2), (n, 0.045), (m, 3.4), (Sf, 0.2), (g, 9.806), (k, 1)]), y)")
+out <- as.numeric(unlist(strsplit(gsub("\\[|\\]", "", out), ",")))
+length(out)
+out
+```
+
+
+## 6. Evaluation du travail suivant les 5 critères précités
+
+**1.	Comportement du Rmd à l'exécution**
+
+L'exécution du code Rmd se réalise parfaitement.
+
+\ 
+
+**2.	Qualité de la rédaction du dossier**
+
+La rédaction de ce document est succinte mais correcte.
+
+Elle se  veut être un tutoriel simple et efficace.
+
+\ 
+
+**3.	Accessibilité, didactisme et pertinence du dossier**
+
+La lecture de ce dossier est aisée et accessible. Elle ne nécessite pas un niveau mathématique élévé. 
+
+Les descriptions sont commentées. Elles auraient pu l'être davantage, cependant cela reste un travail bien illustré et à la portée de novices afin d'exposer brièvement le package rSymPy. 
+
+L'auteure arrive à faire adhérer le lecteur à sa production. 
+Le document a vocation à transmettre une connaissance et le but, pour ma part, est atteint.
+
+Le sujet est pertinent et a vocation à servir de tutoriel d'introduction à la découverte de packages R.
+
+\ 
+
+**4.	Qualité et lisibilité du RMarkdown**
+
+Le RMarkdown est bien écrit, lisible et aéré. 
+
+J'aurais éventuellement qu'une seule suggestion. 
+
+Pour ma part, j'aurais ajouté davantage de commentaires hors des chunks afin d'illustrer les notions commentées et rendre le document PDF plus ludique et sympathique à aborder.
+
+Autrement, il s'agit d'un code bien réalisé.
+
+\ 
+
+**5.	Qualité du LaTeX / équation et des illustrations**
+
+Les applications sont simples, de qualité et maitrisées dans l'ensemble. 
+
+L'absence d'expressions \LaTeX{} est dommageable. Cela aurait apporté un plus au document.
+
+
+## 7. Conclusion
+
+Selon moi, il s'agit globalement d'un bon travail. 
+
+L'auteure fournit un dossier documenté et facile à lire.
+
+Ce document apporte une bonne approche pour découvrir ce package. 
+
+Personnellement, j'aurais aimé un peu plus de commentaires hors des chunks et des expressions \LaTeX{}. 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+Vous retrouvez ce document sur mon [**GitHub**](https://github.com/T-Hak/PSBX).

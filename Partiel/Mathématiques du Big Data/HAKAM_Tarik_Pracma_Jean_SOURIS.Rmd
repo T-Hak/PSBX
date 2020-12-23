@@ -1,0 +1,185 @@
+---
+title: "**Pracma de Jean SOURIS**"
+author: "Tarik HAKAM"
+date: "22/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Critères d'évaluation 
+
+1.	Comportement du Rmd à l'exécution
+2.	Qualité de la rédaction du dossier
+3.	Accessibilité, didactisme et pertinence du dossier
+4.	Qualité et lisibilité du Rmarkdown
+5.	Qualité du LaTeX / équation et des illustrations
+
+
+## 2. Lien vers le document commenté
+
+En cliquant [**ici**](https://github.com/jeansouris/PSBX), vous trouverez le lien menant au GitHub de Jean SOURIS hébergeant le fruit de sa réalisation.
+
+## 3. Auteurs du document commenté
+
+Le document évalué dans le cadre de ce rendu a été produit par Jean SOURIS, étudiant en Master 2 Data Management à Paris School of Business.
+
+## 4. Synthèse du document
+
+Dans cette démonstration, l'auteur va illustrer sa compréhension des fonctions d'Einstein à l'aide du package **pracma**.
+
+**Pracma** est l'acronyme de ***"Practical Numerical Maths Functions"*** et est issu de la fonction "MATLAB".
+
+Cette fonction est utilisée pour exprimer des sujets mathématiques tels que des analyses numériques, le développement de fonctions afin de trouver leurs solutions, voire même d'obtenir leur représentation numérique.
+
+
+
+Ici, il sera étudié différentes dimensions d’application de la fonction d’Einstein telles que : 
+
+  $\Rightarrow$ $E_{1}$, $E_{2}$, $E_{3}$, $E_{4}$, ..., $E_{n}$.
+
+La fonction d'Einstein sera présentée pour $n = 1$, $n = 2$, $n= 3$ et $n = 4$.
+
+\newpage
+
+## 5. Extrait commenté des parties de code
+
+L'auteur commence par définir la variable $x1$ sur l’intervalle $[-4, 4]$, découpé en 300 chunks :
+
+$x \in [-4 ; 4]$
+
+```{r eval=FALSE, include=TRUE}
+x1 <- seq(-4, 4, len = 300)
+```
+
+Puis, il définit $y1$, tel que :
+
+
+```{r eval=FALSE, include=TRUE}
+y1 <- einsteinF(1, x1)
+```
+
+On comprend à travers ce document qu’il existe différentes dimensions d’application de la fonction d’Einstein telles que $E_{1}$, $E_{2}$, $E_{3}$, $E_{4}$, ..., $E_{n}$.
+
+
+Ici il est présenté pour $n = 1$, $n = 2$, $n= 3$ et $n = 4$.
+
+L'auteur utilise la fonction d’Einstein pour $n = 1$, telle que : 
+
+\begin{equation}
+E1(x) = \frac{x^2 \exp(x)}{(\exp(x) - 1)^2}
+\end{equation}
+
+\ 
+
+Ensuite, il plot $y1$ en fonction de $x1$ tel que $y1(x) = E1(x)$.
+
+```{r eval=FALSE, include=TRUE}
+plot(x1, y1, type = "l", col = "red",
+     xlab = "", ylab = "", main = "Fonction d'Einstein 1 E1(x)")
+grid()
+```
+
+\ 
+
+Puis, il réutilise la fonction d’Einstein pour $n = 2$, telle que : 
+
+\begin{equation}
+E2(x) = \frac{x}{\exp(x) - 1}
+\end{equation}
+
+```{r eval=FALSE, include=TRUE}
+y2 <- einsteinF(2, x1)
+```
+
+Il utilise une nouvelle fois la fonction d’Einstein pour $n = 3$, telle que : 
+
+\begin{equation}
+E3(x) = \ln(1-\exp(-x))
+\end{equation}
+
+```{r eval=FALSE, include=TRUE}
+y3 <- einsteinF(3, x3)
+```
+
+Et enfin, il utilise également la fonction d'Einstein pour $n = 4$ de la même façon, telle que :
+
+\begin{equation}
+E4(x) = \frac{x}{(\exp(x) - 1)} - \ln(1-\exp(-x))
+\end{equation}
+
+```{r eval=FALSE, include=TRUE}
+y4 <- einsteinF(4, x3)
+```
+
+***NB : Au vu de la ressemblance des fonctions d’Einstein présentées, il semblerait qu'il existe une formule de récurrence, qui n’est pas formulé dans ce document. ***
+
+
+## 6. Evaluation du travail suivant les 5 critères précités
+
+**1.	Comportement du Rmd à l'exécution**
+
+L'exécution du code Rmd se réalise parfaitement à condition que l'on retire la ligne de code 194 qui renvoie à fichier .ico non disponible. 
+
+\ 
+
+**2.	Qualité de la rédaction du dossier**
+
+La rédaction de ce document est de bonne qualité, un peu redondante néanmoins, mais aboutie en devinant les intentions de l'auteur.
+
+Elle se veut être un tutoriel virgularisant les fonctions d'Einstein de manière efficace.
+
+\ 
+
+**3.	Accessibilité, didactisme et pertinence du dossier**
+
+La lecture de ce dossier est accessible. Elle ne nécessite pas un niveau mathématique très élévé.
+
+Les descriptions sont commentées. 
+
+Le travail est bien illustré et à la portée de débutants afin d'exposer brièvement le package **pracma** et d'introduire les fonctions d'Einstein.
+
+L'auteur arrive à faire adhérer le lecteur à sa production. 
+
+Le document a vocation à transmettre une connaissance et le but, pour ma part, est atteint.
+
+Le sujet est pertinent et a vocation à servir de tutoriel d'introduction à la découverte de packages R.
+
+\ 
+
+**4.	Qualité et lisibilité du RMarkdown**
+
+Le RMarkdown est bien écrit, lisible et aéré. 
+
+Il s'agit d'un code bien réalisé.
+
+\ 
+
+**5.	Qualité du LaTeX / équation et des illustrations**
+
+Les applications sont relativement simples, de qualité et maitrisées. 
+
+La présence d'expressions \LaTeX{} apporte un plus au document.
+
+
+## 7. Conclusion
+
+Selon moi, il s'agit d'un bon travail. 
+
+L'auteur fournit un dossier recherché, documenté et globalement facile à lire.
+
+Ce document apporte une bonne approche pour découvrir ce package. 
+
+Personnellement, j'apprécie la présence d'expressions \LaTeX{}. 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+Vous retrouvez ce document sur mon [**GitHub**](https://github.com/T-Hak/PSBX).

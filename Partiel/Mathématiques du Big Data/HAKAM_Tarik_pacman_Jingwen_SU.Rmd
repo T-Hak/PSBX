@@ -1,0 +1,157 @@
+---
+title: "**pacman de Jingwen SU**"
+author: "Tarik HAKAM"
+date: "22/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Critères d'évaluation 
+
+1.	Comportement du Rmd à l'exécution
+2.	Qualité de la rédaction du dossier
+3.	Accessibilité, didactisme et pertinence du dossier
+4.	Qualité et lisibilité du Rmarkdown
+5.	Qualité du LaTeX / équation et des illustrations
+
+
+## 2. Lien vers le document commenté
+
+En cliquant [**ici**](https://github.com/Jingwen-su/PSBX/tree/main/Document%20final), vous trouverez le lien menant au GitHub de Jingwen SU hébergeant le fruit de sa réalisation.
+
+## 3. Auteurs du document commenté
+
+Le document évalué dans le cadre de ce rendu a été produit par Jingwen SU, étudiante en Master 2 Data Management à Paris School of Business.
+
+## 4. Synthèse du document
+
+Dans ce document, il est proposé une illustration des packages **pracma** et **caret** à travers des applications mathématiques visant à effectuer une approximation polynomiale ainsi qu'une régréssion linéaire.
+
+Ici, pour l'évaluation de ce travail, il ne sera pris en compte que la partie mathématique accompagnée du package **pracma** et non le package **caret** permettant de réaliser la régréssion linéaire.
+
+
+## 5. Extrait commenté des parties de code
+
+Dans ce document, l'auteur définit $x$ pour abscisse allant de 0 à $\pi$ sur un intervalle de 25 chunks.
+
+Puis, elle définit y tel que : 
+
+\begin{equation}
+y = \sin(x) + 0,05 * \mathbb{1}_{[-2, 2]}
+\end{equation}
+
+
+```{r eval=FALSE, include=TRUE}
+set.seed(1)
+x <- seq(0, pi, length.out = 25)
+y <- sin(x) + 0.05 * runif(length(x), -2, 2)
+p1 <- polyfit(x, y, 6)
+p2 <- polyfix(x, y, 6, xfix = c(1, 3), yfix = c(0.75, 0.05))
+p3 <- polyval(p1, x)
+ 
+data1 <- data.frame(x = x, y = p3, y_fix = polyval(p2, x), y_point = y, stringsAsFactors = F)
+g1 <- ggplot(data1) + geom_line(aes(x, y), color = "pink", size = 1) + geom_line(aes(x, 
+    y_fix), color = "blue", size = 1) + geom_point(aes(x, y_point), color = "grey", 
+    size = 3)
+g1
+```
+
+Après, elle définit p1, tel que : 
+
+\begin{equation}
+p1 = x^6 + y^5
+\end{equation}
+
+Puis p2, tel que : 
+
+\begin{equation}
+p2 = x^6 + y^5
+\end{equation}
+
+Avec comme condition que :
+
+- pour $x_{1}$ = 1 et $y_{1}$ = 0.75
+- pour $x_{2}$ = 3 et $y_{2}$ = 0.05
+
+La fonction **`polyval`** va permettre de réaliser une approximation polynomiale ; ici à partir de p1 et définie dans la variable p3. 
+
+\ 
+
+$\Rightarrow$ `p3 <- polyval(p1, x)`
+
+\ 
+
+Puis les données définies par l’approximation polynomiale p3 sont stockées dans la table data1.
+
+L'auteure réalise pour finir un plot de l’approximation polinomiale de p1 (color = "pink"), p2 (color = "blue") et de la fonction y (points color = "grey").
+
+## 6. Evaluation du travail suivant les 5 critères précités
+
+**1.	Comportement du Rmd à l'exécution**
+
+L'exécution du code Rmd se réalise parfaitement.
+
+\ 
+
+**2.	Qualité de la rédaction du dossier**
+
+Concernant la partie du document évaluée autour du package **pracma**, la rédaction est succinte, voire même insuffisante et difficile pour un public sans des bases mathématiques solides.
+
+D'un point de vue personnel, il aurait été davantage pertinent d'étayer le propos.
+
+\ 
+
+**3.	Accessibilité, didactisme et pertinence du dossier**
+
+La lecture de ce dossier peut sembler difficile et peu accessible. Elle nécessite un certain niveau mathématique. 
+
+Les descriptions sont peu commentées et peu claires. L'auteure aurait pu davantage illustrer, car à première vue, ce document peut ne pas être à la portée de novices sans explications plus argumentées. 
+
+L'auteure laisse entrevoir les possibilités offertes par le package **pracma** mais acquiert difficilement l'adhésion des lecteurs à sa production. 
+Le document a vocation à transmettre une connaissance et le but, pour ma part, est difficilement atteint sans recherche personnelle.
+
+Le sujet est cependant pertinent, sans toutefois ambitionner à devenir un tutoriel d'introduction de référence.
+
+\ 
+
+**4.	Qualité et lisibilité du RMarkdown**
+
+Le RMarkdown est correctement écrit, est lisible et aéré. 
+
+J'aurais éventuellement qu'une seule suggestion. 
+
+Pour ma part, j'aurais ajouté davantage de commentaires hors des chunks afin d'illustrer les notions commentées et rendre le document PDF plus ludique et sympathique à aborder.
+
+Autrement, il s'agit d'un code bien réalisé.
+
+\ 
+
+**5.	Qualité du LaTeX / équation et des illustrations**
+
+Les applications sont complexes mais, dans l'ensemble, de qualité. 
+
+L'absence d'expressions \LaTeX{} est dommageable. Cela aurait apporté un plus au document.
+
+
+## 7. Conclusion
+
+Selon moi, il s'agit globalement d'un bon travail.
+
+Cependant, l'auteure aurait pu rendre ce dossier plus accessible en documentant davantage afin de rendre la lecture de ce dernier plus facile.
+
+Ce document apporte toutefois une approche convenable pour découvrir ce package. 
+
+Personnellement, j'aurais aimé un peu plus de commentaires hors des chunks et des expressions \LaTeX{}. 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+Vous retrouvez ce document sur mon [**GitHub**](https://github.com/T-Hak/PSBX).

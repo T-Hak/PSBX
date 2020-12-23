@@ -1,0 +1,189 @@
+---
+title: "**Pracma de Xueting YIN**"
+author: "Tarik HAKAM"
+date: "22/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Critères d'évaluation 
+
+1.	Comportement du Rmd à l'exécution
+2.	Qualité de la rédaction du dossier
+3.	Accessibilité, didactisme et pertinence du dossier
+4.	Qualité et lisibilité du Rmarkdown
+5.	Qualité du LaTeX / équation et des illustrations
+
+
+## 2. Lien vers le document commenté
+
+En cliquant [**ici**](https://github.com/yinxueting/PSBX), vous trouverez le lien menant au GitHub de Xueting YIN hébergeant le fruit de sa réalisation.
+
+## 3. Auteurs du document commenté
+
+Le document évalué dans le cadre de ce rendu a été produit par Xueting YIN, étudiante en Master 2 Data Management à Paris School of Business.
+
+## 4. Synthèse du document
+
+Dans ce document, il est proposé une illustration du package **pracma**.
+
+Pracma est un package qui fournit un grand nombre : 
+
+- de fonctions d'analyse numérique et d'algèbre linéaire,
+- d'optimisation numérique,
+- d'équations différentielles,
+- de séries chronologiques,
+- ainsi que des fonctions mathématiques spéciales bien connues. 
+
+Ici, il est question de définir deux matrices A et B d’une dimension définie à partir d’un tableau.
+
+L'auteure utilisera les fonctions : 
+
+- `and (A, B)`
+- `or (A, B)`
+- `eye (n)`
+- `ones (n, m)`
+- `zeros (n, m)`
+
+
+## 5. Extrait commenté des parties de code
+
+Dans ce document, l'auteure a donc commencé par définir deux matrices A et B d’une dimension définie à partir d’un tableau. 
+
+```{r}
+library(pracma)
+```
+
+```{r}
+A <- matrix(c(6, 0.5, 0,
+              0.5, 5, 0.75, 
+              0.35, 0, 0, 
+              0.5, 0.85, 0.6 ), 4, 3, byrow=TRUE)
+B <- matrix(c( 0, 1, 0, 
+               1, 1, 1, 
+               0, 1, 0,
+               0, 1, 0 ), 4, 3, byrow=TRUE)
+```
+
+Puis a procédé à l’opération logique  « AND ». 
+
+**Par exemple : **
+
+- 1 AND 0 = 0
+- 0 AND 0 = 0
+- 0 AND 1 = 0
+- 1 AND 1 = 1
+
+```{r}
+and(A, B)
+```
+
+Ainsi qu'à l’opération logique  « OR ». 
+
+**Par exemple : **
+
+- 1 OR 0 = 1
+- 0 OR 0 = 0
+- 0 OR 1 = 1
+- 1 OR 1 = 1
+
+```{r}
+or(A, B)
+```
+
+Dans l’exemple, pour tout élément de la matrice A ou B $\neq$ 0, tout élément est considéré comme = 1 dans la logique booléenne.
+
+\ 
+
+Ensuite, l'auteure a défini la fonction `eye()` qui permet de générer une matrice de diagonale 1, dite matrice identité.
+
+
+```{r}
+eye(3)
+```
+ 
+ 
+Puis la fonction `ones(n, m)`, qui permet de générer une matrice constituée uniquement que de 1.
+
+```{r}
+ones(3, 1)
+```
+
+
+Et enfin, la fonction `zeros(n, m)`, qui permet de générer une matrice constituée uniquement que de 0.
+
+```{r}
+zeros(1, 3)
+```
+
+
+## 6. Evaluation du travail suivant les 5 critères précités
+
+**1.	Comportement du Rmd à l'exécution**
+
+L'exécution du code Rmd se réalise parfaitement.
+
+\ 
+
+**2.	Qualité de la rédaction du dossier**
+
+La rédaction de ce document est succinte mais correcte.
+
+Elle se veut être un tutoriel simple et efficace. D'après moi, il aurait pu néanmoins détailler certains points.
+
+\ 
+
+**3.	Accessibilité, didactisme et pertinence du dossier**
+
+La lecture de ce dossier est relativement aisée et accessible. Elle ne nécessite pas un niveau mathématique élévé. 
+
+Les descriptions auraient pu être davantage commentées. Cependant cela reste un travail correctement illustré et accessible afin d'illustrer brièvement le package pracma 
+
+L'auteure arrive correctement à faire adhérer le lecteur à sa production. 
+Le document a vocation à transmettre une connaissance et le but, pour ma part, est atteint.
+
+Le sujet est pertinent et a vocation à servir de tutoriel d'introduction à la découverte de packages R.
+
+\ 
+
+**4.	Qualité et lisibilité du RMarkdown**
+
+Le RMarkdown est plutôt bien écrit et est lisible. 
+
+J'aurais éventuellement qu'une seule suggestion. 
+
+Pour ma part, j'aurai ajouté davantage de commentaires hors des chunks afin d'illuster les notions commentées et rendre le document PDF plus ludique et sympathique à aborder.
+
+Autrement, il s'agit d'un code correctement réalisé.
+
+\ 
+
+**5.	Qualité du LaTeX / équation et des illustrations**
+
+Les applications sont simples et maitrisées. 
+
+D'un point de vue mathématique, l'absence d'expressions \LaTeX{} est quelque peu dommageable. Cela aurait apporté un plus au document.
+
+
+## 7. Conclusion
+
+Selon moi, il s'agit globalement d'un travail correct. 
+
+L'auteure fournit un dossier documenté et facile à lire.
+
+Ce document apporte une bonne approche pour découvrir ce package. 
+
+Personnellement, j'aurais aimé un peu plus de commentaires et des expressions \LaTeX{}. 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+Vous retrouvez ce document sur mon [**GitHub**](https://github.com/T-Hak/PSBX).
