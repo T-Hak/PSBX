@@ -1,0 +1,61 @@
+---
+title: "**Auto-évaluation globale**"
+author: "Tarik HAKAM"
+date: "22/12/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Points positifs de mes travaux : 
+
+  - Les trames des tutoriels sont réfléchies et cohérentes. Il existe un fil conducteur dans la rédaction de mes documents. 
+  
+  - On retrouve dans mes productions, des explications des options qui se veulent les plus accessibles possibles.
+  
+  - Ces explications sont détaillées de façon à rendre la compréhension des lignes de codes lisibles, accessibles et reproductibles pour les lecteurs.
+  
+  - Mes documents intègrent systématiquement une bibliographie
+  
+  - Mes productions sont abondantes en expressions LaTeX 
+
+
+## Points positifs de autres travaux :  
+
+  - Mes camarades ont réalisés des productions illustrées d'exemples simples, accessibles et dont la redondance permet d'appuyer leurs propos.
+  
+  - Concernant le package ggplot2, il existe une grande diversité d'illustrations de plots à travers l'ensemble des travaux.
+  
+  - Il est à noter qu'il existe une bonne compréhension du package dplyr au vu des explications.
+  
+  - Il est à noter également, qu'il existe un focus particulier autour du package ggplot2, qui semble être l'un des packages les mieux maitrisés.
+  
+  - Concernant les packages mathématiques, il est constaté dans l'ensemble une application du package rSymPy interessante.
+  
+  - L'ensemble des travaux de mes camarades me semble correctement illustré.
+  
+
+## Points négatifs de mes travaux : 
+
+  - Un des points négatifs que je trouve dans mes travaux se situe dans l'illustration du package pracma, qui est peu accessible en cas d'absence d'un bagage mathématiques avancé.
+
+## Points négatifs des autres travaux : 
+
+  - Je trouve que beaucoup de travaux manquent de code davantage commentés.
+  
+  - Il existe selon moi, quelques codes peu aboutis
+  
+  - D'un point de vu personnel, j'ai regretté l'absence d'expressions LaTeX dans la quasi totalité des travaux de mes camarades, mis à part dans le dossier de Jean SOURIS.
+  
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+Vous retrouvez ce document sur mon [**GitHub**](https://github.com/T-Hak/PSBX).
